@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  home
+  right
 </template>
 
 <style lang="less" scoped>
