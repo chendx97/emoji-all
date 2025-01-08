@@ -10,7 +10,7 @@ const handleClose = () => {
 </script>
 
 <template>
-  <el-menu default-active="0" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b"
+  <el-menu default-active="0" background-color="#202b3e" text-color="#fff" active-text-color="#ffd04b"
     @open="handleOpen" @close="handleClose">
     <el-menu-item index="all">
       <span class="emoji">👀</span>
@@ -32,7 +32,6 @@ const handleClose = () => {
 
 <style lang="less" scoped>
 .el-menu {
-  // height: 100%;
   border-right: 0;
 
   .emoji {

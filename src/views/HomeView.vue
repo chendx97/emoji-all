@@ -2,7 +2,9 @@
 </script>
 
 <template>
-  home
+  <div class="page-home">
+    <emoji-card :info="{ emoji: '😀', title: '嘿嘿' }" />
+  </div>
 </template>
 
 <style lang="less" scoped>

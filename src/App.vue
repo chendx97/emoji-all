@@ -18,11 +18,13 @@
 <style lang="less" scoped>
 .el-container {
   height: 100vh;
+  background-color: #f5f7fb;
+  color: #3c4350;
 
   .left-menu {
     width: 250px;
     height: 100%;
-    background-color: #545c64;
+    background-color: #202b3e;
   }
 }
 </style>
