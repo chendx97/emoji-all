@@ -12,9 +12,9 @@ const handleCopy = () => {
 
 <template>
   <div class="emoji-card" @click="handleCopy" @mouseenter="isHover = true" @mouseleave="isHover = false">
-    <span>{{ info.emoji }}</span>
+    <span class="emoji">{{ info.emoji }}</span>
     <el-button v-if="isHover" class="copy-btn" text bg>复制</el-button>
-    <span v-else class="emoji-title">{{ info.title }}</span>
+    <span v-else class="emoji-title">{{ info.text }}</span>
   </div>
 </template>
 
@@ -34,6 +34,10 @@ const handleCopy = () => {
 
   &:hover {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .emoji {
+    font-size: 24px;
   }
 
   .copy-btn {

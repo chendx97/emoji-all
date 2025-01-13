@@ -9,9 +9,6 @@
     <el-main>
       <router-view />
     </el-main>
-    <el-aside width="200px">
-      <RightSide />
-    </el-aside>
   </el-container>
 </template>
 
