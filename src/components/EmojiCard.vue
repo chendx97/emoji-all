@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { ElMessage } from 'element-plus';
 const { info } = defineProps(['info']);
 
-const isHover = ref(true);
+const isHover = ref(false);
 const handleCopy = () => {
   navigator.clipboard.writeText(info.emoji);
   ElMessage.success('复制成功');
