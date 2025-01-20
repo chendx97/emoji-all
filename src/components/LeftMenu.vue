@@ -1,27 +1,34 @@
 <script setup lang="ts">
 import emojiInfo from '../assets/emoji.json';
 
-const handleOpen = () => {
-  console.log('open');
-};
-const handleClose = () => {
-  console.log('close');
+const handleSelect = (key: string) => {
+  if (key === 'all') {
+    const element = document.querySelector('.el-main');
+    if (element) {
+      element.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  } else {
+    const element = document.getElementById(key);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 };
 </script>
 
 <template>
   <el-menu default-active="0" background-color="#202b3e" text-color="#fff" active-text-color="#ffd04b"
-    @open="handleOpen" @close="handleClose">
+    @select="handleSelect">
     <el-menu-item index="all">
       <span class="emoji">👀</span>
       <span>全部</span>
     </el-menu-item>
-    <el-sub-menu v-for="(level1, i) in emojiInfo" :index="`${i}`">
+    <el-sub-menu v-for="(level1, i) in emojiInfo" :index="level1.title">
       <template #title>
         <span class="emoji">{{ level1.emoji }}</span>
         <span>{{ level1.title }}</span>
       </template>
-      <el-menu-item v-for="(level2, j) in level1.children" :key="`${i}-${j}`">
+      <el-menu-item v-for="(level2, j) in level1.children" :key="`${i}-${j}`" :index="level2.title">
         <span class="emoji">{{ level2.emoji }}</span>
         <span>{{ level2.title }}</span>
         <span class="count">{{ level2.count }}</span>

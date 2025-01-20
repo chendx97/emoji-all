@@ -1,15 +1,26 @@
 <script setup lang="ts">
 import emojiInfo from '../assets/emoji.json';
+
+const goTo = (title: string) => {
+  const element = document.getElementById(title);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 </script>
 
 <template>
   <div class="page-home">
     <div class="level1-wrapper" v-for="(level1, i) in emojiInfo">
-      <div class="title1">
-        {{ level1.title }}
+      <div :id="level1.title" class="title1" @click="goTo(level1.title)">
+        <span class="emoji">{{ level1.emoji }}</span>
+        <span class="title">{{ level1.title }}</span>
       </div>
       <div class="level2-wrapper" v-for="level2 in level1.children">
-        <div class="title2">{{ level2.title }}</div>
+        <div :id="level2.title" class="title2" @click="goTo(level2.title)">
+          <span class="emoji">{{ level2.emoji }}</span>
+          <span class="title">{{ level2.title }}</span>
+        </div>
         <div class="card-list">
           <emoji-card v-for="detail in level2.children" :info="detail" />
         </div>
@@ -24,14 +35,35 @@ import emojiInfo from '../assets/emoji.json';
   width: 830px;
 
   .title1 {
-    padding: 10px 0;
+    padding: 5px 0;
+    width: fit-content;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
+
+    .emoji {
+      display: inline-block;
+      width: 32px;
+      vertical-align: middle;
+    }
+  }
+
+  .title {
+    display: inline-block;
+    vertical-align: middle;
   }
 
   .title2 {
     padding: 0;
+    width: fit-content;
     font-size: 16px;
+    cursor: pointer;
+
+    .emoji {
+      display: inline-block;
+      width: 25px;
+      vertical-align: middle;
+    }
   }
 
   .level2-wrapper {
