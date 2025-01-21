@@ -15,11 +15,13 @@ const goTo = (title: string) => {
       <div :id="level1.title" class="title1" @click="goTo(level1.title)">
         <span class="emoji">{{ level1.emoji }}</span>
         <span class="title">{{ level1.title }}</span>
+        <el-tag type="info" round effect="plain" size="small">{{ level1.count }}</el-tag>
       </div>
       <div class="level2-wrapper" v-for="level2 in level1.children">
         <div :id="level2.title" class="title2" @click="goTo(level2.title)">
           <span class="emoji">{{ level2.emoji }}</span>
           <span class="title">{{ level2.title }}</span>
+          <el-tag type="info" round effect="plain" size="small">{{ level2.count }}</el-tag>
         </div>
         <div class="card-list">
           <emoji-card v-for="detail in level2.children" :info="detail" />
@@ -51,6 +53,10 @@ const goTo = (title: string) => {
   .title {
     display: inline-block;
     vertical-align: middle;
+  }
+
+  .el-tag {
+    margin-left: 10px;
   }
 
   .title2 {

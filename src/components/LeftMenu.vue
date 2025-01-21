@@ -22,12 +22,18 @@ const handleSelect = (key: string) => {
     <el-menu-item index="all">
       <span class="emoji">👀</span>
       <span>全部</span>
+      <span class="count">3781</span>
     </el-menu-item>
     <el-sub-menu v-for="(level1, i) in emojiInfo" :index="level1.title">
       <template #title>
         <span class="emoji">{{ level1.emoji }}</span>
         <span>{{ level1.title }}</span>
       </template>
+      <el-menu-item :index="level1.title">
+        <span class="emoji">{{ level1.emoji }}</span>
+        <span>全部</span>
+        <span class="count">{{ level1.count }}</span>
+      </el-menu-item>
       <el-menu-item v-for="(level2, j) in level1.children" :key="`${i}-${j}`" :index="level2.title">
         <span class="emoji">{{ level2.emoji }}</span>
         <span>{{ level2.title }}</span>

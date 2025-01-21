@@ -15,6 +15,7 @@ declare module 'vue' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElTag: typeof import('element-plus/es')['ElTag']
     EmojiCard: typeof import('./src/components/EmojiCard.vue')['default']
     LeftMenu: typeof import('./src/components/LeftMenu.vue')['default']
     LeftSide: typeof import('./src/components/LeftSide.vue')['default']
