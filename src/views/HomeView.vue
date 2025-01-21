@@ -33,8 +33,8 @@ const goTo = (title: string) => {
 
 <style lang="less" scoped>
 .page-home {
-  margin: 30px auto;
-  width: 830px;
+  padding-right: 20px;
+  overflow: auto;
 
   .title1 {
     padding: 5px 0;
@@ -82,8 +82,8 @@ const goTo = (title: string) => {
 
   .card-list {
     margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
 }

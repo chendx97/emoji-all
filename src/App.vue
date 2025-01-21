@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// import RightSide from './components/RightSide.vue';
+
 </script>
 
 <template>
@@ -8,6 +10,7 @@
     </el-aside>
     <el-main>
       <router-view />
+      <RightSide />
     </el-main>
   </el-container>
 </template>
@@ -22,6 +25,19 @@
     width: 250px;
     height: 100%;
     background-color: #202b3e;
+  }
+
+  .el-main {
+    flex-grow: 0;
+    width: 1000px;
+    margin: 30px auto;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 0;
+
+    .right-side {
+      flex-shrink: 0;
+    }
   }
 }
 </style>
