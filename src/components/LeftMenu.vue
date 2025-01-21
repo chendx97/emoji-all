@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 import emojiInfo from '../assets/emoji.json';
+const router = useRouter();
 
-const handleSelect = (key: string) => {
+function jump(key: string) {
   if (key === 'all') {
     const element = document.querySelector('.el-main');
     if (element) {
@@ -13,6 +15,16 @@ const handleSelect = (key: string) => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+}
+const handleSelect = (key: string) => {
+  if (location.pathname !== '/') {
+    router.push('/');
+    setTimeout(() => {
+      jump(key);
+    }, 0);
+    return;
+  }
+  jump(key);
 };
 </script>
 
