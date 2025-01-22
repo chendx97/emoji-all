@@ -29,7 +29,7 @@
 
   .el-main {
     flex-grow: 0;
-    width: 1000px;
+    width: 1050px;
     margin: 30px auto;
     display: inline-flex;
     justify-content: space-between;
