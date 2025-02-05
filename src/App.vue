@@ -1,6 +1,13 @@
 <script setup lang="ts">
-// import RightSide from './components/RightSide.vue';
+import { onMounted, ref, provide } from 'vue';
+import { getReq } from './utils/myFetch';
 
+const list = ref([]);
+provide('totalEmojis', list);
+onMounted(async () => {
+  const { result } = await getReq('/emoji/all', {});
+  list.value = result;
+});
 </script>
 
 <template>

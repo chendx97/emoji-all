@@ -9,6 +9,14 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    proxy: {
+      '/emoji': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      }
+    }
+  },
   plugins: [
     vue(),
     vueDevTools(),

@@ -68,7 +68,7 @@ const goTopics = () => {
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background-color: #ff7fff;
+        background-color: #f90;
         display: inline-block;
         text-align: center;
         line-height: 32px;
@@ -79,19 +79,19 @@ const goTopics = () => {
       }
 
       &:nth-child(2) .emoji {
-        background-color: #00ffff;
+        background-color: #ff5e3a;
       }
 
       &:nth-child(3) .emoji {
-        background-color: #7fff7f;
+        background-color: #4485ed;
       }
 
       &:nth-child(4) .emoji {
-        background-color: #7f7f7f;
+        background-color: #ff5e3a;
       }
 
       &:nth-child(5) .emoji {
-        background-color: #4747ff;
+        background-color: #35a541;
       }
     }
 

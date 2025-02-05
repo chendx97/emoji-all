@@ -23,5 +23,6 @@ declare module 'vue' {
     RightSide: typeof import('./src/components/RightSide.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TopicCard: typeof import('./src/components/TopicCard.vue')['default']
   }
 }

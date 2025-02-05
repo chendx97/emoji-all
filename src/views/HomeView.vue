@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import emojiInfo from '../assets/emoji.json';
+import { inject } from 'vue';
+const emojiInfo = inject('totalEmojis') as EmojiDetail[];
 
 const goTo = (title: string) => {
   const element = document.getElementById(title);

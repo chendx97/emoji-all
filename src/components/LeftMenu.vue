@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { inject } from 'vue';
 import { useRouter } from 'vue-router';
-import emojiInfo from '../assets/emoji.json';
 const router = useRouter();
+const emojiInfo = inject('totalEmojis') as EmojiDetail[];
 
 function jump(key: string) {
   if (key === 'all') {
