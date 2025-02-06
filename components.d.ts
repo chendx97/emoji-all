@@ -7,11 +7,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ElAffix: typeof import('element-plus/es')['ElAffix']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElContainer: typeof import('element-plus/es')['ElContainer']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
@@ -19,7 +19,6 @@ declare module 'vue' {
     ElTag: typeof import('element-plus/es')['ElTag']
     EmojiCard: typeof import('./src/components/EmojiCard.vue')['default']
     LeftMenu: typeof import('./src/components/LeftMenu.vue')['default']
-    LeftSide: typeof import('./src/components/LeftSide.vue')['default']
     RightSide: typeof import('./src/components/RightSide.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

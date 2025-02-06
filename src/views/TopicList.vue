@@ -17,10 +17,12 @@ onMounted(async () => {
 
 <style lang="less" scoped>
 .topics {
-  width: calc(100% - 300px);
   margin: 0 auto;
+  width: calc(100% - 300px);
+  padding-right: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  overflow: auto;
 }
 </style>
