@@ -5,7 +5,7 @@ import { getReq } from './utils/myFetch';
 const list = ref([]);
 provide('totalEmojis', list);
 onMounted(async () => {
-  const { result } = await getReq('/emoji/all', {});
+  const { result } = await getReq('/api/emoji/all');
   list.value = result;
 });
 </script>

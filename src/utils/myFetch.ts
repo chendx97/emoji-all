@@ -1,4 +1,4 @@
-export const getReq = async (url: string, params: { [key: string]: any }) => {
+export const getReq = async (url: string, params?: { [key: string]: any }) => {
   const queryString = params ? new URLSearchParams(params).toString() : '';
   const fullUrl = queryString ? `${url}?${queryString}` : url;
   const res = await fetch(fullUrl, { method: 'GET' });

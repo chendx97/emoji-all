@@ -11,7 +11,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 export default defineConfig({
   server: {
     proxy: {
-      '/emoji': {
+      '/api': {
         target: 'http://localhost:3000',
         changeOrigin: true,
       }
