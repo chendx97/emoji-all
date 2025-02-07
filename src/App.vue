@@ -42,6 +42,12 @@ onMounted(async () => {
     justify-content: space-between;
     padding: 0;
 
+    .main-wrapper {
+      width: calc(100% - 300px);
+      padding-right: 20px;
+      overflow: auto;
+    }
+
     .right-side {
       flex-shrink: 0;
     }

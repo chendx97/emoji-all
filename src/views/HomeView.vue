@@ -11,7 +11,7 @@ const goTo = (title: string) => {
 </script>
 
 <template>
-  <div class="page-home">
+  <div class="main-wrapper page-home">
     <div class="level1-wrapper" v-for="(level1, i) in emojiInfo">
       <div :id="level1.title" class="title1" @click="goTo(level1.title)">
         <span class="emoji">{{ level1.emoji }}</span>
@@ -34,9 +34,6 @@ const goTo = (title: string) => {
 
 <style lang="less" scoped>
 .page-home {
-  padding-right: 20px;
-  overflow: auto;
-
   .title1 {
     padding: 5px 0;
     width: fit-content;

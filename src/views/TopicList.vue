@@ -10,19 +10,15 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="topics">
+  <div class="main-wrapper topics">
     <topic-card v-for="topic in topics" :info="topic" />
   </div>
 </template>
 
 <style lang="less" scoped>
 .topics {
-  margin: 0 auto;
-  width: calc(100% - 300px);
-  padding-right: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  overflow: auto;
 }
 </style>
