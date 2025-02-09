@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { getReq } from '@/utils/myFetch';
 const route = useRoute();
 
 const list = ref([]);
-onMounted(async () => {
+watch(() => route.params.id, async () => {
   const { result } = await getReq('/api/topic/info', { id: route.params.id });
   list.value = result;
+}, {
+  immediate: true,
 });
 </script>
 

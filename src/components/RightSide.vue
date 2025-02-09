@@ -6,22 +6,27 @@ const hotTopics = [
   {
     emoji: '🎄',
     name: '圣诞节',
+    id: 'christmas',
   },
   {
     emoji: '🧨',
     name: '春节',
+    id: 'spring',
   },
   {
     emoji: '🛍️',
     name: '购物节',
+    id: 'shopping',
   },
   {
     emoji: '🎓',
     name: '开学/毕业',
+    id: 'school',
   },
   {
     emoji: '🏆',
     name: '体育比赛',
+    id: 'sports',
   },
 ];
 
@@ -38,7 +43,7 @@ const goTopics = () => {
       </template>
       <p v-for="topic in hotTopics" :key="topic.name" class="topic-item">
         <span class="emoji">{{ topic.emoji }}</span>
-        <span>{{ topic.name }}</span>
+        <span class="name" @click="() => $router.push(`/topic/${topic.id}`)">{{ topic.name }}</span>
         <span class="icon-hot">🔥</span>
       </p>
       <template #footer>
@@ -72,6 +77,10 @@ const goTopics = () => {
         display: inline-block;
         text-align: center;
         line-height: 32px;
+      }
+
+      .name {
+        cursor: pointer;
       }
 
       .icon-hot {
