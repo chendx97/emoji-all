@@ -8,12 +8,14 @@
   <title>Emoji 大全 | 河豚</title>
   <!-- 添加重定向脚本 -->
   <script type="text/javascript">
-    // 处理来自 404.html 的重定向
     (function () {
-      var redirect = sessionStorage.redirect;
+      const redirect = sessionStorage.redirect;
       delete sessionStorage.redirect;
-      if (redirect && redirect != location.href) {
-        history.replaceState(null, null, redirect);
+      if (redirect && redirect !== location.href) {
+        const segments = redirect.split('/');
+        const repo = '/emoji-all';
+        const path = segments.slice(segments.indexOf(repo) + 1).join('/');
+        history.replaceState(null, null, '/' + path);
       }
     })();
   </script>
