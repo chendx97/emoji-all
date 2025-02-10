@@ -5,8 +5,11 @@
   <meta charset="utf-8">
   <title>Redirecting...</title>
   <script>
-    sessionStorage.redirect = location.href;
-    location.replace(location.origin + '/emoji-all'); // 替换成您的仓库名
+    const repo = '/emoji-all';
+    const path = location.pathname.replace(repo, '');
+    const redirectUrl = location.origin + repo + path;
+    sessionStorage.redirect = redirectUrl;
+    location.replace(location.origin + repo);
   </script>
 </head>
 
