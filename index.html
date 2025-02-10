@@ -12,10 +12,7 @@
       const redirect = sessionStorage.redirect;
       delete sessionStorage.redirect;
       if (redirect && redirect !== location.href) {
-        const segments = redirect.split('/');
-        const repo = '/emoji-all';
-        const path = segments.slice(segments.indexOf(repo) + 1).join('/');
-        history.replaceState(null, null, '/' + path);
+        history.replaceState(null, null, redirect);
       }
     })();
   </script>
