@@ -9,10 +9,12 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production' ? '/emoji-all/' : '/',
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        // target: 'http://localhost:3000',
+        target: 'http://fyzzz.cn:9100',
         changeOrigin: true,
       }
     }
