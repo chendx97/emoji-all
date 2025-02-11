@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/cdxapi': {
-        target: 'http://fyzzz.cn:9100',
+        target: 'https://fyzzz.cn',
         changeOrigin: true,
       }
     }
