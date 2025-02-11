@@ -6,7 +6,7 @@ const route = useRoute();
 
 const list = ref([]);
 watch(() => route.params.id, async () => {
-  const { result } = await getReq('/api/topic/info', { id: route.params.id });
+  const { result } = await getReq('/cdxapi/topic/info', { id: route.params.id });
   list.value = result;
 }, {
   immediate: true,

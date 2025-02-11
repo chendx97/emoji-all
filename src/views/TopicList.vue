@@ -4,7 +4,7 @@ import { getReq } from '@/utils/myFetch';
 
 const topics = ref([]);
 onMounted(async () => {
-  const { result } = await getReq('/api/topics/all');
+  const { result } = await getReq('/cdxapi/topics/all');
   topics.value = result;
 });
 </script>

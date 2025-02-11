@@ -12,7 +12,7 @@ export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/emoji-all/' : '/',
   server: {
     proxy: {
-      '/api': {
+      '/cdxapi': {
         target: 'http://fyzzz.cn:9100',
         changeOrigin: true,
       }
