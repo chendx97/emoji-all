@@ -1,4 +1,4 @@
-const baseUrl = import.meta.env.PROD ? '//fyzzz.cn:9100' : '';
+const baseUrl = import.meta.env.PROD ? '//fyzzz.cn' : '';
 export const getReq = async (url: string, params?: { [key: string]: any }) => {
   const queryString = params ? new URLSearchParams(params).toString() : '';
   const fullUrl = queryString ? `${url}?${queryString}` : url;
