@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import { onMounted, ref, provide } from 'vue';
+import { ElLoading } from 'element-plus';
 import { getReq } from './utils/myFetch';
 
 const list = ref([]);
 provide('totalEmojis', list);
 onMounted(async () => {
+  const loading = ElLoading.service({
+    lock: true,
+    text: 'Loading',
+    background: 'rgba(0, 0, 0, 0.7)',
+  });
   const { result } = await getReq('/cdxapi/emoji/all');
   list.value = result;
+  loading.close();
 });
 </script>
 
