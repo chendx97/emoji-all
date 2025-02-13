@@ -5,7 +5,12 @@ const { info } = defineProps(['info']);
 
 const isHover = ref(false);
 const handleCopy = () => {
-  navigator.clipboard.writeText(info.emoji);
+  const textarea = document.createElement('textarea');
+  textarea.value = info.emoji;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
   ElMessage.success('复制成功');
 };
 
